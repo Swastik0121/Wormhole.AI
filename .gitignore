@@ -1,0 +1,17 @@
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Developer environment files
+.vscode/
+.idea/
+*.swp
+*.log
+
+# Extension build/zip files (if you create them)
+*.zip
+dist/
+
+# Local Node.js files (if you eventually use npm)
+node_modules/
+package-lock.json
