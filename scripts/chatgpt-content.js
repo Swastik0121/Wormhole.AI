@@ -49,7 +49,7 @@ function injectChatGPTUI() {
         padding: 5px 10px;
         font-family: -apple-system, system-ui, sans-serif;
         font-weight: 600;
-        font-size: 13px;
+        font-size: 15px;
         background: transparent;
         cursor: pointer;
         transition: all 0.3s ease;
@@ -129,7 +129,7 @@ function injectChatGPTUI() {
 
     // Button 1: Ingest
     container.appendChild(
-      createBtn('🌌 Initiate Ingest', 'btn-ingest', () => {
+      createBtn('Initiate Ingest', 'btn-ingest', () => {
         let data = scrapeChatGPT();
         if (data.length > 10) data = [data[0], ...data.slice(-9)];
         chrome.runtime.sendMessage(
@@ -145,13 +145,13 @@ function injectChatGPTUI() {
     chrome.storage.local.get(['lastCapturedChat'], (result) => {
       if (result.lastCapturedChat) {
         container.appendChild(
-          createBtn('🪐 Manifest Context', 'btn-manifest', () => {
+          createBtn('Manifest Context', 'btn-manifest', () => {
             pasteToChatGPT(result.lastCapturedChat);
           }),
         );
 
         container.appendChild(
-          createBtn('🕳️ Terminate Bridge', 'btn-terminate', () => {
+          createBtn('Terminate Bridge', 'btn-terminate', () => {
             chrome.storage.local.remove('lastCapturedChat', () => {
               console.log('🧹 Wormhole cleared!');
               document.getElementById('llm-bridge-ui-container')?.remove();

@@ -52,7 +52,7 @@ function injectClaudeUI() {
         padding: 5px 10px;
         font-family: -apple-system, system-ui, sans-serif;
         font-weight: 600;
-        font-size: 13px;
+        font-size: 15px;
         background: transparent;
         cursor: pointer;
         transition: all 0.3s ease;
@@ -131,7 +131,7 @@ function injectClaudeUI() {
 
     // Button 1: Initiate Ingest (With Smart Truncation)
     container.appendChild(
-      createBtn('🌌 Initiate Ingest', 'btn-ingest', () => {
+      createBtn('Initiate Ingest', 'btn-ingest', () => {
         let data = scrapeClaude();
         if (data.length > 10) {
           console.log(
@@ -152,14 +152,14 @@ function injectClaudeUI() {
       if (result.lastCapturedChat) {
         // Button 2: Manifest Context
         container.appendChild(
-          createBtn('🪐 Manifest Context', 'btn-manifest', () => {
+          createBtn('Manifest Context', 'btn-manifest', () => {
             pasteToClaude(result.lastCapturedChat);
           }),
         );
 
         // Button 3: Terminate Bridge
         container.appendChild(
-          createBtn('🕳️ Terminate Bridge', 'btn-terminate', () => {
+          createBtn('Terminate Bridge', 'btn-terminate', () => {
             chrome.storage.local.remove('lastCapturedChat', () => {
               console.log('🧹 Wormhole cleared!');
               document.getElementById('llm-bridge-ui-container')?.remove();
